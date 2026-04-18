@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signal Dashboard</title>
+</head>
+<body>
+  <h1>Signal Dashboard</h1>
+  <p id="status">Loading...</p>
+
+  <script>
+    fetch("/api")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("status").innerText =
+          "Status: " + data.status;
+      });
+  </script>
+</body>
+</html>
